@@ -14,10 +14,12 @@ $cssjs->register_css('bootstrap3', array(
 $cssjs->register_css('bootstrap3theme', array(
     'src' => __WWW_ROOT_BOOTSTRAP3__ . '/skin/css/bootstrap-theme.min.css',
 ));
-// datatables bootstrap integration
-$cssjs->register_foot('bootstrap3datatables', array(
-    'src' => __WWW_ROOT_JQUERYDATATABLES__ . '/skin/js/dataTables.bootstrap.js',
-));
+// datatables bootstrap integration, only if datatables is registered
+if ($cssjs->is_registered_foot('jquery.dataTables')) {
+    $cssjs->register_foot('bootstrap3datatables', array(
+        'src' => __WWW_ROOT_JQUERYDATATABLES__ . '/skin/js/dataTables.bootstrap.js',
+    ));
+}
 $cssjs->register_css('bootstrap3datatables', array(
     'src' => __WWW_ROOT_JQUERYDATATABLES__ . '/skin/css/dataTables.bootstrap.css'
 ));
