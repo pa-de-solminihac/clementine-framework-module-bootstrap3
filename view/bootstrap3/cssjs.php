@@ -1,7 +1,7 @@
 <?php
-$cssjs = $this->getModel('cssjs');
+$cssjs = Clementine::getModel('cssjs');
 $cssjs->register_foot('jquery', array(
-    'src' => $this->getHelper('jquery')->getUrl()
+    'src' => Clementine::getHelper('jquery')->getUrl()
 ));
 // bootstrap3
 $cssjs->register_foot('bootstrap3', array(
